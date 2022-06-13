@@ -1,7 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { CartCtxt } from '../App'
 
 const Product = ({product}) => {
-    
+    const {cart, setCart} = useContext(CartCtxt);
+
   return (
     <div className="card col-3">
         <img src={product.image} className="card-img-top" alt="..."/>
@@ -10,7 +12,9 @@ const Product = ({product}) => {
             <p className="card-text">
                 מחיר: {product.price}
             </p>
-            <button className="btn btn-primary">הוסף לעגלה</button>
+            <button onClick={()=> setCart([...cart,product])} 
+                className="btn btn-primary">הוסף לעגלה
+            </button>
         </div>
     </div>
   )

@@ -1,3 +1,4 @@
+import { createContext, useState } from "react";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import './App.css';
 import Cart from "./components/Cart";
@@ -5,8 +6,13 @@ import ContactUs from "./components/ContactUs";
 import Home from "./components/Home";
 import Store from "./components/Store";
 
+export const CartCtxt = createContext([]);
+
 function App() {
+  const [cart, setCart] = useState([]);
+
   return (
+    <CartCtxt.Provider value={{cart, setCart}}>
     <BrowserRouter>
         <nav>
           <Link to='/'>Home</Link> |
@@ -21,6 +27,7 @@ function App() {
           <Route path="/contact-us" element={<ContactUs />}/>
         </Routes>
     </BrowserRouter>
+    </CartCtxt.Provider>
   );
 }
 
