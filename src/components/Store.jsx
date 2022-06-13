@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
-import { productsDB } from '../services/database';
+import productDB from '../product.DB.json'
+
 
 const Store = () => {
     const [products, setProducts ] = useState([]);
-    useEffect(()=> setProducts(productsDB), []);
+    useEffect(()=> setProducts(productDB), []);
 
   return (
     <div>
