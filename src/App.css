@@ -1,3 +1,7 @@
 body{
     direction: rtl;
 }
+
+tbody img{
+    width: 50px;
+}
