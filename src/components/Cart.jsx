@@ -14,25 +14,24 @@ const Cart = () => {
   },[cart]);
 
   return (
-    <div className='col-8 mx-auto mt-2'>
+    <div className='col-sm-8 mx-auto mt-2'>
     <h2>העגלה שלי</h2>
     {cart.length >0? 
     <table className="table table-striped"> 
       <thead>
         <tr>
-          <th>מוצר</th>
-          <th>תמונה</th>
-          <th>מחיר</th>
-          <th>#</th>
+          <th colSpan={3}>מוצר</th>
+          <th colSpan={1}>תמונה</th>
+          <th colSpan={1}>מחיר</th>
+          <th colSpan={1}>#</th>
         </tr>
       </thead>
       <tbody>
       {cart.map((p,i)=> <CartTable key={i} product={p}/>)}
       <tr>
-        <th></th>
-        <th>סהכ לתשלום: </th>
-        <th><Price price={totalPrice}/></th>
-        <th></th>
+        <th colSpan={1}></th>
+        <th colSpan={4}>סהכ לתשלום: </th>
+        <th colSpan={1}><Price price={totalPrice}/></th>
       </tr>
       </tbody>
     </table>: <div className='mt-5'>אין מוצרים בעגלה</div>}

@@ -7,16 +7,14 @@ const CartTable = ({product}) => {
 
   return (
     <tr>
-        <td>{product.name}</td>
-        <td><img alt={product.name} src={product.image}/></td>
-        <td><Price price={product.price}/></td>
-        <td><button className='btn btn-success' onClick={()=>{
-            console.log(cart);
+        <td colSpan={3}>{product.name}</td>
+        <td colSpan={1}><img alt={product.name} src={product.image}/></td>
+        <td colSpan={1}><Price price={product.price}/></td>
+        <td colSpan={1}><button className='btn btn-success' onClick={()=>{
             const productIdx = cart.findIndex(p => p.id === product.id);
             cart.splice(productIdx, 1);
             setCart(() => [...cart]);
-            console.log(cart);
-        }}>הסר מהעגלה</button></td>
+        }}>הסר</button></td>
     </tr>
   )
 }

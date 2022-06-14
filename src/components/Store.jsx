@@ -14,7 +14,7 @@ const Store = () => {
     const categories = ["גברים", "נשים", "ילדים"];
   return (
     <div>
-        <nav className='sticky-top my-3 col-4' style={{direction:"ltr"}}>
+        <nav className='my-3 col-sm-4' style={{direction:"ltr"}}>
           <div className='input-group'>
             <button className='btn btn-outline-primary' onClick={() => {
               setListCount(addToCount);
