@@ -4,8 +4,10 @@ import Product from './Product';
 
 
 const Store = () => {
+    const addToCount = 20;
     const [products, setProducts ] = useState([]);
     const [category, setCategory ] = useState("גברים");
+    const [listCount, setListCount] = useState(addToCount);
     const searchInput = useRef();
     useEffect(()=> setProducts(productDB), []);
 
@@ -13,17 +15,25 @@ const Store = () => {
   return (
     <div>
         <nav className='sticky-top my-3 col-4' style={{direction:"ltr"}}>
-        <div className='input-group'>
-        <button className='btn btn-outline-primary' onClick={() => setCategory(searchInput.current.value)}>חפש</button>
-          <select ref={searchInput} className="form-control text-center">
-            {categories.map((opt,i)=><option key={i}>{opt}</option>)}
-          </select>
-        </div>
+          <div className='input-group'>
+            <button className='btn btn-outline-primary' onClick={() => {
+              setListCount(addToCount);
+              setCategory(searchInput.current.value);
+            }}>חפש
+            </button>
+            <select ref={searchInput} className="form-control text-center">
+              {categories.map((opt,i)=><option key={i}>{opt}</option>)}
+            </select>
+          </div>
         </nav>
+
         <h2>חנות</h2>
+
         <div className='row'>
-        {products.map((p,i) => category===p.category?<Product key={i} product={p}/>:null)}
+        {products.filter(p => category === p.category).map((p,i) => 
+        i<listCount?<Product key={i} product={p}/>:null)}
         </div>
+        <button onClick={()=> setListCount(listCount+addToCount)} className='my-3 btn btn-primary '>טען עוד...</button>
     </div>
   )
 }
