@@ -6,8 +6,6 @@ tbody img{
     width: 50px;
 }
 .cart-count{
-    border-radius: 50%;
     color: rgb(223, 4, 4);
-    background-color: white;
     padding: 1px;
 }
