@@ -33,7 +33,8 @@ const Store = () => {
         {products.filter(p => category === p.category).map((p,i) => 
         i<listCount?<Product key={i} product={p}/>:null)}
         </div>
-        <button onClick={()=> setListCount(listCount+addToCount)} className='my-3 btn btn-primary '>טען עוד...</button>
+        <button onClick={()=> setListCount(listCount+addToCount)} 
+        className='my-3 btn btn-success'>טען עוד...</button>
     </div>
   )
 }

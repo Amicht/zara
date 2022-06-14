@@ -15,10 +15,10 @@ function App() {
     <CartCtxt.Provider value={{cart, setCart}}>
     <BrowserRouter>
       <div className="container-sm text-center">
-        <nav className="nav justify-content-center sticky-top bg-light">
-          <Link className="nav-link" to='/'>חנות</Link> 
-          <Link className="nav-link" to='/cart'>העגלה שלי <CartLogoCount /></Link>
-          <Link className="nav-link" to='/contact-us'>צור קשר</Link>
+        <nav className="nav justify-content-center sticky-top bg-dark text-white">
+          <Link className="nav-link text-white" to='/'>חנות</Link> 
+          <Link className="nav-link text-white" to='/cart'>העגלה שלי <CartLogoCount /></Link>
+          <Link className="nav-link text-white" to='/contact-us'>צור קשר</Link>
         </nav>
         <Routes>
           <Route path="/" element={<Store />}/>
