@@ -2,7 +2,7 @@ import React from 'react'
 
 const ContactUs = () => {
   return (
-    <div>
+    <div className='col-3 mt-3 mx-auto'>
         <h2>ZARA</h2>
         <div>
             <p>

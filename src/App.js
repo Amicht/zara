@@ -14,11 +14,12 @@ function App() {
   return (
     <CartCtxt.Provider value={{cart, setCart}}>
     <BrowserRouter>
-        <nav>
-          <Link to='/'>Home</Link> |
-          <Link to='/store'>Store</Link> | 
-          <Link to='/cart'>Cart</Link> | 
-          <Link to='/contact-us'>contact us</Link>
+      <div className="container text-center">
+        <nav className="nav justify-content-center sticky-top bg-light">
+          <Link className="nav-link" to='/'>דף הבית</Link>
+          <Link className="nav-link" to='/store'>חנות</Link> 
+          <Link className="nav-link" to='/cart'>העגלה שלי</Link>
+          <Link className="nav-link" to='/contact-us'>צור קשר</Link>
         </nav>
         <Routes>
           <Route path="/" element={<Home />}/>
@@ -26,6 +27,7 @@ function App() {
           <Route path="/cart" element={<Cart />}/>
           <Route path="/contact-us" element={<ContactUs />}/>
         </Routes>
+      </div>
     </BrowserRouter>
     </CartCtxt.Provider>
   );

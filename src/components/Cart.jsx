@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { CartCtxt } from '../App'
 import CartTable from './CartTable';
+import Price from './Price'
 
 const Cart = () => {
   const { cart } = useContext(CartCtxt);
@@ -9,12 +10,13 @@ const Cart = () => {
   useEffect(()=> {
     let total = 0;
     cart.forEach(p => total+= p.price);
-    setTotalPrice(total);
+    setTotalPrice(total.toFixed(1));
   },[cart]);
 
   return (
-    <div className='col-6 mx-auto'>
+    <div className='col-8 mx-auto mt-2'>
     <h2>העגלה שלי</h2>
+    {cart.length >0? 
     <table className="table table-striped"> 
       <thead>
         <tr>
@@ -28,12 +30,12 @@ const Cart = () => {
       {cart.map((p,i)=> <CartTable key={i} product={p}/>)}
       <tr>
         <th></th>
-        <th></th>
         <th>סהכ לתשלום: </th>
-        <th>{totalPrice}</th>
+        <th><Price price={totalPrice}/></th>
+        <th></th>
       </tr>
       </tbody>
-    </table>
+    </table>: <div className='mt-5'>אין מוצרים בעגלה</div>}
     </div>
   )
 }
