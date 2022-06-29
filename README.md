@@ -1,8 +1,15 @@
 
+## ZARA - online clothes shop mockup (in hebrew)
+
+[Demo](https://zara-5e3c7.web.app/)
+
+### About
+- This project was a 4 hour 'sprint' collaboration, finishing the app and deploy.
+- The project was a pure front-end react app, and deployed with firebase.
+- The fake API data, was scrapped from www.terminalx.com.
 
 ### Web scrapping function
-
-- website - https://www.terminalx.com/brands/fox-main/fox?category_level=20743&p=10
+website - https://www.terminalx.com/brands/fox-main/fox?category_level=20743&p=10
 
 ```
 const products = JSON.parse(window.localStorage.getItem("products")) || [];
