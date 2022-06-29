@@ -4,8 +4,8 @@
 [Demo](https://zara-5e3c7.web.app/)
 
 ### About
-- This project was a 4 hour 'sprint' collaboration, finishing the app and deploy.
-- The project was a pure front-end react app, and deployed with firebase.
+- This project was a 4 hour 'sprint' mission, finishing the app and deploy.
+- The project was a pure front-end react app, styled with bootstrap and deployed with firebase.
 - The fake API data, was scrapped from www.terminalx.com.
 
 ### Web scrapping function
